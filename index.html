@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LabyrinthFS - Git LFS Viewer</title>
+</head>
+<body>
+    <h1>Welcome to LabyrinthFS</h1>
+    <div>
+        <input type="text" id="repoPath" placeholder="Enter repository path" />
+        <button onclick="openDialog()">Browse</button>
+        <button onclick="onShowLfsFilesClick()">Show LFS Files</button>
+    </div>
+    <div>
+        <label for="branchSelect">Branches:</label>
+        <select id="branchSelect">
+            <option>Select a file to see branches</option>
+        </select>
+    </div>
+    <div>
+        <!-- Cleanup Buttons -->
+        <button onclick="pruneLfsObjects(true)">Dry Run Cleanup</button>
+        <button onclick="pruneLfsObjects(false)">Execute Cleanup</button>
+    </div>
+    <div id="lfs-files"></div>
+
+    <script src="renderer.js"></script>
+</body>
+</html>
